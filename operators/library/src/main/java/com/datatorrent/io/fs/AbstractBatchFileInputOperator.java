@@ -40,7 +40,7 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 
 import com.datatorrent.api.Context.OperatorContext;
-import com.datatorrent.io.fs.AbstractBatchFileInputOperator.BatchDirectoryScanner.ScannerState;
+import com.datatorrent.io.fs.AbstractBatchFileInputOperator.DirectoryScanner.ScannerState;
 import com.datatorrent.lib.io.fs.AbstractFileInputOperator;
 
 /**
@@ -137,7 +137,7 @@ public abstract class AbstractBatchFileInputOperator<T> extends AbstractFileInpu
 
   public AbstractBatchFileInputOperator()
   {
-    BatchDirectoryScanner batchScanner = new BatchDirectoryScanner();
+    DirectoryScanner batchScanner = new DirectoryScanner();
     this.scanner = batchScanner;
   }
 
@@ -145,8 +145,8 @@ public abstract class AbstractBatchFileInputOperator<T> extends AbstractFileInpu
   public void setup(OperatorContext context)
   {
     super.setup(context);
-    if (scanner instanceof BatchDirectoryScanner) {
-      BatchDirectoryScanner batchScanner = (BatchDirectoryScanner)scanner;
+    if (scanner instanceof DirectoryScanner) {
+      DirectoryScanner batchScanner = (DirectoryScanner)scanner;
       batchScanner.setBatchMode(emitBatchTuples);
       batchScanner.setEndApplication(performShutdown);
     }
@@ -174,8 +174,8 @@ public abstract class AbstractBatchFileInputOperator<T> extends AbstractFileInpu
   {
     if (currentWindowId > windowControlDataManager.getLargestCompletedWindow()) {
       //save the state of scanner so that after recovery, the scanner is at correct state
-      if (scanner instanceof BatchDirectoryScanner) {
-        currentWindowBatchState.scannerState = ((BatchDirectoryScanner)scanner).getScannerState();
+      if (scanner instanceof DirectoryScanner) {
+        currentWindowBatchState.scannerState = ((DirectoryScanner)scanner).getScannerState();
       }
       try {
         windowControlDataManager.save(currentWindowBatchState, currentWindowId);
@@ -204,8 +204,8 @@ public abstract class AbstractBatchFileInputOperator<T> extends AbstractFileInpu
         if (recoveryData.endApplicationEmitted) {
           emitEndApplicationControlTuple();
         }
-        if (scanner instanceof BatchDirectoryScanner) {
-          BatchDirectoryScanner batchScanner = (BatchDirectoryScanner)scanner;
+        if (scanner instanceof DirectoryScanner) {
+          DirectoryScanner batchScanner = (DirectoryScanner)scanner;
           batchScanner.setScannerState(recoveryData.scannerState);
         }
       }
@@ -234,8 +234,8 @@ public abstract class AbstractBatchFileInputOperator<T> extends AbstractFileInpu
   protected void scanDirectory()
   {
     //additional guard
-    if (scanner instanceof BatchDirectoryScanner) {
-      BatchDirectoryScanner batchScanner = (BatchDirectoryScanner)scanner;
+    if (scanner instanceof DirectoryScanner) {
+      DirectoryScanner batchScanner = (DirectoryScanner)scanner;
       ScannerState scannerState = batchScanner.updateState();
       if (scannerState == ScannerState.EMIT_START_BATCH) {
         LOG.debug("Emitting start batch control tuple");
@@ -281,7 +281,7 @@ public abstract class AbstractBatchFileInputOperator<T> extends AbstractFileInpu
    */
   @SuppressWarnings("serial")
   @Evolving
-  public static class BatchDirectoryScanner extends com.datatorrent.lib.io.fs.AbstractFileInputOperator.DirectoryScanner
+  public static abstract class DirectoryScanner extends com.datatorrent.lib.io.fs.AbstractFileInputOperator.DirectoryScanner
   {
     private boolean batchMode;
     private boolean endApplication;
