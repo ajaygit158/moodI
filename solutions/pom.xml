@@ -147,7 +147,8 @@
 
 
   <modules>
-    <!-- Add individual solutions as modules here -->
+    <!-- add other solution modules here -->
+    <module>telecom-batch-solution</module>
   </modules>
   
 </project>

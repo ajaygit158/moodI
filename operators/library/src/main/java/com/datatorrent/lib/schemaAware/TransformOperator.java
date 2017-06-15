@@ -1,7 +1,7 @@
 package com.datatorrent.lib.schemaAware;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;

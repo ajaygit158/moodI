@@ -1,0 +1,54 @@
+{
+    "separator": ",",
+    "quoteChar":"\"",
+    "fields": [
+        {
+            "name": "cdrId",
+            "type": "String",
+            "constraints": {
+                "required": "true"
+            }
+        },
+        {
+            "name": "fromContactNo",
+            "type": "String",
+            "constraints": {
+                "required": "true",
+                "pattern": "[0-9]*$",
+                "maxLength": "10",
+                "minLength": "10"
+            }
+        },
+        {
+            "name": "toContactNo",
+            "type": "String",
+            "constraints": {
+                "required": "true",
+                "pattern": "[0-9]*$",
+                "maxLength": "10",
+                "minLength": "10"
+            }
+        },
+        {
+            "name": "callType",
+            "type": "String",
+            "constraints": {
+                "required": "true"
+            }
+        },
+        {
+            "name": "startTime",
+            "type": "Date",
+            "constraints": {
+                "format": "dd/MM/yyyy HH:mm:ss"
+            }
+        },
+        {
+            "name": "endTime",
+            "type": "Date",
+            "constraints": {
+                 "format": "dd/MM/yyyy HH:mm:ss"
+            }
+        }
+    ]
+}

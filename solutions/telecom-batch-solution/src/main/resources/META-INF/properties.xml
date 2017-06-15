@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+<configuration>
+
+  <property>
+    <name>apex.app-param.inputDirectoryPath</name>
+    <description>Specify input path of directory</description>
+    <value>/user/ajay/telecomData</value>
+  </property>
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.cdrReader.prop.directory</name>
+    <value>${apex.app-param.inputDirectoryPath}</value>
+  </property>
+  <property>
+    <name>apex.plugin.dag.setup</name>
+    <value>com.datatorrent.schema.SchemaDAGPlugin</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.transformOutputFieldInfo</name>
+    <description>Specify json string with output field name and its data type. Possible values for data types are BOOLEAN,DOUBLE,INTEGER,FLOAT,LONG,SHORT,CHARACTER,STRING,DATE E.g. {"uniqueAdId":"INTEGER","cost":"DOUBLE"}</description>
+    <value>{"cdrId":"STRING","fromContactNo":"STRING","toContactNo":"STRING","callType":"STRING","startTime":"DATE","duration":"LONG", "isLocalCdr":"BOOLEAN", "pulseType":"STRING", "smsCost":"DOUBLE", "pulseCost":"DOUBLE"}</value>
+  </property> 
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.transformer.prop.outputFieldInfo</name>
+    <value>${apex.app-param.transformOutputFieldInfo}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.transformExpressionInfo</name>
+    <description>Specify json string with output field name and expression. E.g. {"uniqueAdId":"{$.adId}","cost":"{$.bidPrice} * 1.0"} </description>
+    <value>{"cdrId":"{$.cdrId}","fromContactNo":"{$.fromContactNo}","toContactNo":"{$.toContactNo}","callType":"{$.callType}","startTime":"{$.startTime}","duration":"({$.endTime}.getTime() - {$.startTime}.getTime()) / 1000", "isLocalCdr":"({$.homeRegion} == {$.calleeRegion})", "pulseType":"{$.pulseType}", "smsCost":"(({$.homeRegion} == {$.calleeRegion}) ? ({$.localSmsCost}) : ({$.nationalSmsCost}))", "pulseCost":"(({$.homeRegion} == {$.calleeRegion}) ? ({$.localPulseCost}) : ({$.nationalPulseCost}))"}</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.transformer.prop.expressionInfo</name>
+    <value>${apex.app-param.transformExpressionInfo}</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.transformer.prop.copyMatchingFields</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.transformCostOutputFieldInfo</name>
+    <description>Specify json string with output field name and its data type. Possible values for data types are BOOLEAN,DOUBLE,INTEGER,FLOAT,LONG,SHORT,CHARACTER,STRING,DATE E.g. {"uniqueAdId":"INTEGER","cost":"DOUBLE"}</description>
+    <value>{"cdrId":"STRING","fromContactNo":"STRING","toContactNo":"STRING","callType":"STRING","startTime":"DATE","duration":"LONG", "localOrNational":"STRING", "cost":"DOUBLE"}</value>
+  </property> 
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.costCalculator.prop.outputFieldInfo</name>
+    <value>${apex.app-param.transformCostOutputFieldInfo}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.transformCostExpressionInfo</name>
+    <description>Specify json string with output field name and expression. E.g. {"uniqueAdId":"{$.adId}","cost":"{$.bidPrice} * 1.0"} </description>
+    <value>{"cdrId":"{$.cdrId}","fromContactNo":"{$.fromContactNo}","toContactNo":"{$.toContactNo}","callType":"{$.callType}","startTime":"{$.startTime}","duration":"{$.duration}", "localOrNational":"({$.isLocalCdr}) ? \"LOCAL\" : \"NATIONAL\"", "cost":"(Math.round((({$.callType}.equals(\"SMS\")) ? ({$.smsCost}) : (({$.pulseType}.equals(\"PER_SEC\")) ? (({$.pulseCost} * {$.duration}) / 100) : ({$.pulseCost} * Math.ceil({$.duration} / 60.0d)))) * 100) / 100.0d)"}</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.costCalculator.prop.expressionInfo</name>
+    <value>${apex.app-param.transformCostExpressionInfo}</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.costCalculator.prop.copyMatchingFields</name>
+    <value>false</value>
+  </property>
+
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.PlanDetailsEnricher.prop.store.fileName</name>
+    <value>/user/ajay/planDetails/callPlan.json</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.FromContactEnrich.prop.store.databaseUrl</name>
+    <value>jdbc:postgresql://node35.morado.com:5432/testdb</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.ToContactEnrich.prop.store.databaseUrl</name>
+    <value>jdbc:postgresql://node35.morado.com:5432/testdb</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.FromContactEnrich.prop.store.databaseDriver</name>
+    <value>org.postgresql.Driver</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.ToContactEnrich.prop.store.databaseDriver</name>
+    <value>org.postgresql.Driver</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.FromContactEnrich.prop.store.userName</name>
+    <value>postgres</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.ToContactEnrich.prop.store.userName</name>
+    <value>postgres</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.ToContactEnrich.prop.store.password</name>
+    <value>postgres</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.FromContactEnrich.prop.store.password</name>
+    <value>postgres</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.FromContactEnrich.prop.store.queryStmt</name>
+    <value>SELECT region_id "homeRegion", plan_type "planType", plan_id "planId" FROM contact_info where contact_no = ?</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.ToContactEnrich.prop.store.queryStmt</name>
+    <value>SELECT region_id "calleeRegion" FROM contact_info where contact_no = ?</value>
+  </property>
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.cdrReader.partitionCount</name>
+  </property>
+
+
+
+  <property>
+    <name>apex.app-param.FilterConditionForCDRTuples</name>
+    <description>Specify the filter condition for tuples. E.g: ({$}.getAmount() >= 20000)</description>
+    <value>({$}.getCallType().equals("SMS") || {$}.getCallType().equals("OUTGOING"))</value>
+  </property>
+
+  <property>
+    <name>dt.operator.callTypeFilter.prop.condition</name>
+    <value>${apex.app-param.FilterConditionForCDRTuples}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.FilterConditionForPlanTypeTuples</name>
+    <description>Specify the filter condition for tuples. E.g: ({$}.getAmount() >= 20000)</description>
+    <value>({$}.getPlanType().equals("POSTPAID"))</value>
+  </property>
+
+  <property>
+    <name>dt.operator.planTypeFilter.prop.condition</name>
+    <value>${apex.app-param.FilterConditionForPlanTypeTuples}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.OutputFileDirectory</name>
+    <description>Specify the hdfs path for output file</description>
+    <value>/user/ajay/telecomOutput</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.OutputFileName</name>
+    <description>Specify the output file name</description>
+    <value>costCalculatedCDR.txt</value>
+  </property>
+
+  <property>
+    <name>dt.operator.fileOutputOperator.prop.filePath</name>
+    <value>${apex.app-param.OutputFileDirectory}</value>
+  </property>
+
+  <property>
+    <name>dt.operator.fileOutputOperator.prop.outputFileName</name>
+    <value>${apex.app-param.OutputFileName}</value>
+  </property>
+
+  <property>
+    <name>dt.application.BatchTelecomSolution.operator.*.port.*.attr.PARTITION_PARALLEL</name>
+  </property>
+</configuration>
