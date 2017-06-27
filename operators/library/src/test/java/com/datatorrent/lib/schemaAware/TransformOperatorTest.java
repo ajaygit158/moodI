@@ -25,7 +25,7 @@ public class TransformOperatorTest
     outSchema.put(transform.output, new Schema());
     Map<String, String> outputFieldMap = new HashMap<String, String>();
     outputFieldMap.put("uniqueId", "STRING");
-    transform.setOutputFieldMap(outputFieldMap);
+    transform.setOutputFieldInfo("{\"uniqueId\":\"STRING\"}");
     transform.registerSchema(inSchema, outSchema);
     transform.setup(null);
   }

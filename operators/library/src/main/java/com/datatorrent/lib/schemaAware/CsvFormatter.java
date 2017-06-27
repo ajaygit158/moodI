@@ -2,9 +2,12 @@ package com.datatorrent.lib.schemaAware;
 
 import java.util.Map;
 
+import org.apache.hadoop.classification.InterfaceStability;
+
 import com.datatorrent.schema.api.Schema;
 import com.datatorrent.schema.api.SchemaAware;
 
+@InterfaceStability.Evolving
 public class CsvFormatter extends com.datatorrent.contrib.formatter.CsvFormatter implements SchemaAware
 {
 

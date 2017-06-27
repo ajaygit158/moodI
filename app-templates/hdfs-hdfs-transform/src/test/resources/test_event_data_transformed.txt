@@ -1,8 +1,0 @@
-10|fname_10 lname_10|31546
-11|fname_11 lname_11|16201
-12|fname_12 lname_12|7282
-13|fname_13 lname_13|6667
-15|fname_15 lname_15|20274
-16|fname_16 lname_16|32407
-18|fname_18 lname_18|15125
-19|fname_19 lname_19|5868

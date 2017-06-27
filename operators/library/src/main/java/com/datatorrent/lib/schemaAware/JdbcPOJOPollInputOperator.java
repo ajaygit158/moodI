@@ -2,6 +2,8 @@ package com.datatorrent.lib.schemaAware;
 
 import java.util.Map;
 
+import org.apache.hadoop.classification.InterfaceStability;
+
 import com.datatorrent.lib.util.FieldInfo;
 import com.datatorrent.schema.api.Schema;
 import com.datatorrent.schema.api.SchemaAware;
@@ -11,6 +13,7 @@ import com.datatorrent.schema.api.SchemaAware;
  * {@link JdbcPOJOPollInputOperator} and provides implementation for register
  * schema method to make it {@link SchemaAware}
  */
+@InterfaceStability.Evolving
 public class JdbcPOJOPollInputOperator extends com.datatorrent.lib.db.jdbc.JdbcPOJOPollInputOperator
     implements SchemaAware
 {

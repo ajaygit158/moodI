@@ -33,7 +33,7 @@ public class JsonParserTest
     parser.err.setSink(error);
     parser.out.setSink(pojoPort);
     parser.parsedOutput.setSink(objectPort);
-    parser.setFieldInfo("adId|INTEGER,adName|STRING,bidPrice|DOUBLE,active|BOOLEAN,weatherTargeted|CHARACTER");
+    parser.setFieldInfo("{\"adId\":\"INTEGER\",\"adName\":\"STRING\",\"bidPrice\":\"DOUBLE\",\"active\":\"BOOLEAN\",\"weatherTargeted\":\"CHARACTER\"}");
     String name = "ad";
     schemaExtended.setName(name);
     schemaExtended.setFqcn(name);

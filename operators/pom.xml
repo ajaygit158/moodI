@@ -10,14 +10,6 @@
   <packaging>pom</packaging>
   <name>moodi-operators</name>
   
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.deploy.skip>false</maven.deploy.skip>
-    <apex.core.version>3.4.0</apex.core.version>
-    <surefire.args>-Xmx2048m</surefire.args>
-  </properties>
-
   <dependencies>
    <!-- Add dependencies here -->
   </dependencies>
@@ -25,6 +17,7 @@
   <modules>
     <!-- add other operator modules here -->
     <module>library</module>
+    <module>contrib</module>
   </modules>
   
   

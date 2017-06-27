@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.datatorrent.apps</groupId>
+    <artifactId>moodi-app-templates</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>hdfs-to-hdfs-filter-transform</artifactId>
+  <name>HDFS to HDFS Filter Transform App</name>
+  <version>0.10.0</version>
+  <description>Ingest and backup hadoop HDFS data as lines from one cluster to another in a fault tolerant way.</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.sf.supercsv</groupId>
+      <artifactId>super-csv</artifactId>
+      <version>2.4.0</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.janino</groupId>
+      <artifactId>janino</artifactId>
+      <version>2.7.8</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.fge</groupId>
+      <artifactId>json-schema-validator</artifactId>
+      <version>2.0.1</version>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+</project>

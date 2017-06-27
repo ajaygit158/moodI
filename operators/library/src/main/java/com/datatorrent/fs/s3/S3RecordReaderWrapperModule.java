@@ -1,13 +1,17 @@
 package com.datatorrent.fs.s3;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-import org.apache.apex.malhar.lib.fs.s3.S3RecordReaderModule;
+import org.apache.apex.malhar.lib.fs.FSRecordReader;
+import org.apache.apex.malhar.lib.fs.FSRecordReaderModule;
 import org.apache.hadoop.conf.Configuration;
 
 import com.google.common.base.Preconditions;
 
 import com.datatorrent.api.DAG;
+import com.datatorrent.lib.io.fs.S3BlockReader;
+import com.datatorrent.lib.metrics.S3RecordReader;
 
 /**
  * Wrapper for S3RecordReaderModule and specify the below parameters as configuration to this module:
@@ -16,7 +20,7 @@ import com.datatorrent.api.DAG;
  *  - bucketName  : Name of S3 bucket
  *  - s3Schema  : Schema of S3 File System.
  */
-public class S3RecordReaderWrapperModule extends S3RecordReaderModule
+public class S3RecordReaderWrapperModule extends FSRecordReaderModule
 {
   @NotNull
   private String accessKey;
@@ -26,6 +30,34 @@ public class S3RecordReaderWrapperModule extends S3RecordReaderModule
   private String bucketName;
   @NotNull
   private String s3Schema = "s3n";
+  /**
+   * Endpoint for S3
+   */
+  private String s3EndPoint;
+  @Min(0)
+  private int overflowBlockSize;
+
+  /**
+   * Creates an instance of Record Reader
+   *
+   * @return S3RecordReader instance
+   */
+  @Override
+  public FSRecordReader createRecordReader()
+  {
+    S3RecordReader s3RecordReader = new S3RecordReader();
+    s3RecordReader.setBucketName(S3BlockReader.extractBucket(getFiles()));
+    s3RecordReader.setAccessKey(S3BlockReader.extractAccessKey(getFiles()));
+    s3RecordReader.setSecretAccessKey(S3BlockReader.extractSecretAccessKey(getFiles()));
+    s3RecordReader.setEndPoint(s3EndPoint);
+    s3RecordReader.setMode(this.getMode());
+    s3RecordReader.setRecordLength(this.getRecordLength());
+    if (overflowBlockSize != 0) {
+      s3RecordReader.setOverflowBufferSize(overflowBlockSize);
+    }
+    return s3RecordReader;
+  }
+
 
   /**
    * Convert the the input files to S3URI and set it to files.
@@ -49,6 +81,48 @@ public class S3RecordReaderWrapperModule extends S3RecordReaderModule
   {
     generateAndSetS3URIToInput();
     super.populateDAG(dag, configuration);
+  }
+
+  /**
+   * Set the S3 endpoint to use
+   *
+   * @param s3EndPoint
+   */
+  public void setS3EndPoint(String s3EndPoint)
+  {
+    this.s3EndPoint = s3EndPoint;
+  }
+
+  /**
+   * Returns the s3 endpoint
+   *
+   * @return s3EndPoint
+   */
+  public String getS3EndPoint()
+  {
+    return s3EndPoint;
+  }
+
+  /**
+   * additional data that needs to be read to find the delimiter character for
+   * last record in a block. This should be set to approximate record size in
+   * the file, default value 1MB
+   *
+   * @param overflowBlockSize
+   */
+  public void setOverflowBlockSize(int overflowBlockSize)
+  {
+    this.overflowBlockSize = overflowBlockSize;
+  }
+
+  /**
+   * returns the overflow block size
+   *
+   * @return overflowBlockSize
+   */
+  public int getOverflowBlockSize()
+  {
+    return overflowBlockSize;
   }
 
   /**

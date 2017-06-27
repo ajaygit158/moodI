@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.hadoop.classification.InterfaceStability;
+
 import com.esotericsoftware.kryo.NotNull;
 
 import com.datatorrent.contrib.parser.Schema.FieldType;
@@ -15,6 +17,7 @@ import com.datatorrent.schema.api.SchemaAware;
  * Schema aware EnrichOperator
  *
  */
+@InterfaceStability.Evolving
 public class POJOEnricher extends com.datatorrent.contrib.enrich.POJOEnricher implements SchemaAware
 {
 

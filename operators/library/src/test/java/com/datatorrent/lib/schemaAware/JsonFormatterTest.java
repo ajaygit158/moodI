@@ -5,11 +5,13 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.json.JSONException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.skyscreamer.jsonassert.JSONAssert;
 
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -59,7 +61,7 @@ public class JsonFormatterTest
 
   @Test
   public void TestPropogation()
-      throws InstantiationException, IOException, IllegalAccessException, InvocationTargetException
+    throws InstantiationException, IOException, IllegalAccessException, InvocationTargetException, JSONException
   {
 
     Object object = formatter.getClazz().newInstance();
@@ -75,7 +77,7 @@ public class JsonFormatterTest
     Assert.assertEquals(1, out.collectedTuples.size());
     Assert.assertEquals(0, error.collectedTuples.size());
     String expectedOutput = "{\"campId\":98233,\"adId\":1234,\"active\":true,\"adName\":\"adxyz\"}";
-    Assert.assertEquals(expectedOutput, out.collectedTuples.get(0).toString().trim());
+    JSONAssert.assertEquals(expectedOutput, out.collectedTuples.get(0).toString().trim(), false);
   }
 
   @After

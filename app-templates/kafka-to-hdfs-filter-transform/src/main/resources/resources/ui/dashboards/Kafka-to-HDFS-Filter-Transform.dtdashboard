@@ -1,0 +1,4833 @@
+{
+  "import": "true",
+  "user": "devendra",
+  "name": "Kafka-to-HDFS-Filter-Transform",
+  "config": {
+    "applications": [
+      {
+        "name": "Kafka-to-HDFS-Filter-Transform",
+        "user": "devendra"
+      }
+    ],
+    "state": {
+      "widgets": [
+        {
+          "title": "Bytes read per minute from Kafka",
+          "name": "line chart",
+          "style": {
+
+          },
+          "size": {
+            "contentOverflow": "hidden",
+            "minHeight": "300px",
+            "minWidth": "500px",
+            "width": "50%",
+            "overflow": "hidden",
+            "height": "300"
+          },
+          "dataModelOptions": {
+            "dataSource": {
+              "displayName": "[HISTORICAL] OperatorMetrics(kafkaInput)  (user: devendra; app: Kafka-to-HDFS-Filter-Transform)",
+              "query": {
+                "operatorName": "DTMetricsHistQuery",
+                "url": "pubsub",
+                "topic": "DTMetricsHistQuery"
+              },
+              "result": {
+                "operatorName": "DTMetricsHistResult",
+                "url": "pubsub",
+                "topic": "DTMetricsHistResult",
+                "appendQIDToTopic": true
+              },
+              "type": "metrics",
+              "name": "[HISTORICAL] OperatorMetrics(kafkaInput) ",
+              "context": {
+                "keys": {
+                  "appName": "Kafka-to-HDFS-Filter-Transform",
+                  "appUser": "devendra",
+                  "logicalOperatorName": "kafkaInput"
+                }
+              },
+              "appName": "Kafka-to-HDFS-Filter-Transform",
+              "appUser": "devendra",
+              "appPackageSource": {
+                "user": "devendra",
+                "name": "kafka-to-hdfs-filter-transform",
+                "version": "0.9.0",
+                "appName": "Kafka-to-HDFS-Filter-Transform"
+              }
+            },
+            "schema": {
+              "schemaType": "dimensions",
+              "schemaVersion": "1.0",
+              "time": {
+                "slidingAggregateSupported": true,
+                "buckets": [
+                  "1m",
+                  "1h",
+                  "1d"
+                ]
+              },
+              "keys": [
+                {
+                  "name": "appName",
+                  "type": "string",
+                  "enumValues": [
+                    "Kafka-to-HDFS-Filter-Transform"
+                  ]
+                },
+                {
+                  "name": "appUser",
+                  "type": "string",
+                  "enumValues": [
+                    "devendra"
+                  ]
+                },
+                {
+                  "name": "logicalOperatorName",
+                  "type": "string",
+                  "enumValues": [
+                    "kafkaInput"
+                  ]
+                }
+              ],
+              "values": [
+
+              ],
+              "dimensions": [
+                {
+                  "combination": [
+                    "appName",
+                    "appUser",
+                    "logicalOperatorName"
+                  ],
+                  "additionalValues": [
+                    {
+                      "name": "numMessages:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "numMessages:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "numMessages:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "numMessages:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "numMessages:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "numMessages:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "numMessages:AVG",
+                      "type": "long"
+                    },
+                    {
+                      "name": "numBytes:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "numBytes:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "numBytes:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "numBytes:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "numBytes:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "numBytes:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "numBytes:AVG",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalBytes:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalBytes:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalBytes:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalBytes:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalBytes:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalBytes:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalBytes:AVG",
+                      "type": "long"
+                    }
+                  ],
+                  "id": "0",
+                  "label": "appName, appUser, logicalOperatorName",
+                  "valueFields": [
+                    {
+                      "key": "numMessages:SUM",
+                      "id": "numMessages:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "numMessages:MIN",
+                      "id": "numMessages:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "numMessages:MAX",
+                      "id": "numMessages:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "numMessages:COUNT",
+                      "id": "numMessages:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "numMessages:FIRST",
+                      "id": "numMessages:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "numMessages:LAST",
+                      "id": "numMessages:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "numMessages:AVG",
+                      "id": "numMessages:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "numBytes:SUM",
+                      "id": "numBytes:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "numBytes:MIN",
+                      "id": "numBytes:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "numBytes:MAX",
+                      "id": "numBytes:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "numBytes:COUNT",
+                      "id": "numBytes:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "numBytes:FIRST",
+                      "id": "numBytes:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "numBytes:LAST",
+                      "id": "numBytes:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "numBytes:AVG",
+                      "id": "numBytes:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalBytes:SUM",
+                      "id": "totalBytes:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalBytes:MIN",
+                      "id": "totalBytes:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalBytes:MAX",
+                      "id": "totalBytes:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalBytes:COUNT",
+                      "id": "totalBytes:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalBytes:FIRST",
+                      "id": "totalBytes:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalBytes:LAST",
+                      "id": "totalBytes:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalBytes:AVG",
+                      "id": "totalBytes:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    }
+                  ]
+                }
+              ],
+              "timeFields": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                }
+              ],
+              "keyFields": [
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                }
+              ],
+              "fieldSelectionOptions": {
+                "initialSorts": [
+                  {
+                    "id": "id",
+                    "dir": "+"
+                  }
+                ],
+                "bgSizeMultiplier": "2",
+                "defaultRowHeight": "29",
+                "loading": false
+              },
+              "fieldSelectionColumns": [
+                {
+                  "id": "selector",
+                  "key": "id",
+                  "label": "",
+                  "selector": true,
+                  "width": "40px",
+                  "lockWidth": true
+                },
+                {
+                  "id": "id",
+                  "key": "id",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "id": "type",
+                  "key": "type",
+                  "sort": "string",
+                  "filter": "like"
+                }
+              ],
+              "valueFields": [
+
+              ],
+              "valueFieldsAllDimensions": [
+                {
+                  "key": "numMessages:SUM",
+                  "id": "numMessages:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numMessages:MIN",
+                  "id": "numMessages:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numMessages:MAX",
+                  "id": "numMessages:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numMessages:COUNT",
+                  "id": "numMessages:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numMessages:FIRST",
+                  "id": "numMessages:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numMessages:LAST",
+                  "id": "numMessages:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numMessages:AVG",
+                  "id": "numMessages:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numBytes:SUM",
+                  "id": "numBytes:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numBytes:MIN",
+                  "id": "numBytes:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numBytes:MAX",
+                  "id": "numBytes:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numBytes:COUNT",
+                  "id": "numBytes:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numBytes:FIRST",
+                  "id": "numBytes:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numBytes:LAST",
+                  "id": "numBytes:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numBytes:AVG",
+                  "id": "numBytes:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:SUM",
+                  "id": "totalBytes:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:MIN",
+                  "id": "totalBytes:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:MAX",
+                  "id": "totalBytes:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:COUNT",
+                  "id": "totalBytes:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:FIRST",
+                  "id": "totalBytes:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:LAST",
+                  "id": "totalBytes:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:AVG",
+                  "id": "totalBytes:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                }
+              ],
+              "currentValues": [
+
+              ],
+              "fields": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                },
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                }
+              ],
+              "fieldsAllDimensions": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                },
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "numMessages:SUM",
+                  "id": "numMessages:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numMessages:MIN",
+                  "id": "numMessages:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numMessages:MAX",
+                  "id": "numMessages:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numMessages:COUNT",
+                  "id": "numMessages:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numMessages:FIRST",
+                  "id": "numMessages:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numMessages:LAST",
+                  "id": "numMessages:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numMessages:AVG",
+                  "id": "numMessages:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numBytes:SUM",
+                  "id": "numBytes:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numBytes:MIN",
+                  "id": "numBytes:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numBytes:MAX",
+                  "id": "numBytes:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numBytes:COUNT",
+                  "id": "numBytes:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numBytes:FIRST",
+                  "id": "numBytes:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numBytes:LAST",
+                  "id": "numBytes:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "numBytes:AVG",
+                  "id": "numBytes:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:SUM",
+                  "id": "totalBytes:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:MIN",
+                  "id": "totalBytes:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:MAX",
+                  "id": "totalBytes:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:COUNT",
+                  "id": "totalBytes:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:FIRST",
+                  "id": "totalBytes:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:LAST",
+                  "id": "totalBytes:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:AVG",
+                  "id": "totalBytes:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                }
+              ]
+            },
+            "dataQueryParams": {
+              "data": {
+                "time": {
+                  "latestNumBuckets": "10",
+                  "bucket": "1m"
+                },
+                "incompleteResultOK": true,
+                "keys": {
+                  "appName": [
+                    "Kafka-to-HDFS-Filter-Transform"
+                  ],
+                  "appUser": [
+                    "devendra"
+                  ],
+                  "logicalOperatorName": [
+                    "kafkaInput"
+                  ]
+                },
+                "fields": [
+                  "time",
+                  "appName",
+                  "appUser",
+                  "logicalOperatorName",
+                  "numBytes:SUM"
+                ]
+              },
+              "incompleteResultOK": true,
+              "getDataContinuously": true,
+              "rangeType": "latestNumBuckets",
+              "dimensionId": "0",
+              "countdown": "1"
+            },
+            "loadingData": false,
+            "tags": {
+              "multiKeySelect": true
+            }
+          }
+        },
+        {
+          "title": "Bytes written per minute to HDFS",
+          "name": "line chart",
+          "style": {
+
+          },
+          "size": {
+            "contentOverflow": "hidden",
+            "minHeight": "300px",
+            "minWidth": "500px",
+            "width": "50%",
+            "overflow": "hidden",
+            "height": "300"
+          },
+          "dataModelOptions": {
+            "dataSource": {
+              "displayName": "[HISTORICAL] OperatorMetrics(fileOutput)  (user: devendra; app: Kafka-to-HDFS-Filter-Transform)",
+              "query": {
+                "operatorName": "DTMetricsHistQuery",
+                "url": "pubsub",
+                "topic": "DTMetricsHistQuery"
+              },
+              "result": {
+                "operatorName": "DTMetricsHistResult",
+                "url": "pubsub",
+                "topic": "DTMetricsHistResult",
+                "appendQIDToTopic": true
+              },
+              "type": "metrics",
+              "name": "[HISTORICAL] OperatorMetrics(fileOutput) ",
+              "context": {
+                "keys": {
+                  "appName": "Kafka-to-HDFS-Filter-Transform",
+                  "appUser": "devendra",
+                  "logicalOperatorName": "fileOutput"
+                }
+              },
+              "appName": "Kafka-to-HDFS-Filter-Transform",
+              "appUser": "devendra",
+              "appPackageSource": {
+                "user": "devendra",
+                "name": "kafka-to-hdfs-filter-transform",
+                "version": "0.9.0",
+                "appName": "Kafka-to-HDFS-Filter-Transform"
+              }
+            },
+            "schema": {
+              "schemaType": "dimensions",
+              "schemaVersion": "1.0",
+              "time": {
+                "slidingAggregateSupported": true,
+                "buckets": [
+                  "1m",
+                  "1h",
+                  "1d"
+                ]
+              },
+              "keys": [
+                {
+                  "name": "appName",
+                  "type": "string",
+                  "enumValues": [
+                    "Kafka-to-HDFS-Filter-Transform"
+                  ]
+                },
+                {
+                  "name": "appUser",
+                  "type": "string",
+                  "enumValues": [
+                    "devendra"
+                  ]
+                },
+                {
+                  "name": "logicalOperatorName",
+                  "type": "string",
+                  "enumValues": [
+                    "fileOutput"
+                  ]
+                }
+              ],
+              "values": [
+
+              ],
+              "dimensions": [
+                {
+                  "combination": [
+                    "appName",
+                    "appUser",
+                    "logicalOperatorName"
+                  ],
+                  "additionalValues": [
+                    {
+                      "name": "byteCount:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "byteCount:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "byteCount:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "byteCount:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "byteCount:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "byteCount:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "byteCount:AVG",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalBytes:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalBytes:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalBytes:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalBytes:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalBytes:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalBytes:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalBytes:AVG",
+                      "type": "long"
+                    }
+                  ],
+                  "id": "0",
+                  "label": "appName, appUser, logicalOperatorName",
+                  "valueFields": [
+                    {
+                      "key": "byteCount:SUM",
+                      "id": "byteCount:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "byteCount:MIN",
+                      "id": "byteCount:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "byteCount:MAX",
+                      "id": "byteCount:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "byteCount:COUNT",
+                      "id": "byteCount:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "byteCount:FIRST",
+                      "id": "byteCount:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "byteCount:LAST",
+                      "id": "byteCount:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "byteCount:AVG",
+                      "id": "byteCount:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalBytes:SUM",
+                      "id": "totalBytes:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalBytes:MIN",
+                      "id": "totalBytes:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalBytes:MAX",
+                      "id": "totalBytes:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalBytes:COUNT",
+                      "id": "totalBytes:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalBytes:FIRST",
+                      "id": "totalBytes:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalBytes:LAST",
+                      "id": "totalBytes:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalBytes:AVG",
+                      "id": "totalBytes:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    }
+                  ]
+                }
+              ],
+              "timeFields": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                }
+              ],
+              "keyFields": [
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                }
+              ],
+              "fieldSelectionOptions": {
+                "initialSorts": [
+                  {
+                    "id": "id",
+                    "dir": "+"
+                  }
+                ],
+                "bgSizeMultiplier": "2",
+                "defaultRowHeight": "29",
+                "loading": false
+              },
+              "fieldSelectionColumns": [
+                {
+                  "id": "selector",
+                  "key": "id",
+                  "label": "",
+                  "selector": true,
+                  "width": "40px",
+                  "lockWidth": true
+                },
+                {
+                  "id": "id",
+                  "key": "id",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "id": "type",
+                  "key": "type",
+                  "sort": "string",
+                  "filter": "like"
+                }
+              ],
+              "valueFields": [
+
+              ],
+              "valueFieldsAllDimensions": [
+                {
+                  "key": "byteCount:SUM",
+                  "id": "byteCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "byteCount:MIN",
+                  "id": "byteCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "byteCount:MAX",
+                  "id": "byteCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "byteCount:COUNT",
+                  "id": "byteCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "byteCount:FIRST",
+                  "id": "byteCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "byteCount:LAST",
+                  "id": "byteCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "byteCount:AVG",
+                  "id": "byteCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:SUM",
+                  "id": "totalBytes:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:MIN",
+                  "id": "totalBytes:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:MAX",
+                  "id": "totalBytes:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:COUNT",
+                  "id": "totalBytes:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:FIRST",
+                  "id": "totalBytes:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:LAST",
+                  "id": "totalBytes:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:AVG",
+                  "id": "totalBytes:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                }
+              ],
+              "currentValues": [
+
+              ],
+              "fields": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                },
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                }
+              ],
+              "fieldsAllDimensions": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                },
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "byteCount:SUM",
+                  "id": "byteCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "byteCount:MIN",
+                  "id": "byteCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "byteCount:MAX",
+                  "id": "byteCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "byteCount:COUNT",
+                  "id": "byteCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "byteCount:FIRST",
+                  "id": "byteCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "byteCount:LAST",
+                  "id": "byteCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "byteCount:AVG",
+                  "id": "byteCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:SUM",
+                  "id": "totalBytes:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:MIN",
+                  "id": "totalBytes:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:MAX",
+                  "id": "totalBytes:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:COUNT",
+                  "id": "totalBytes:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:FIRST",
+                  "id": "totalBytes:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:LAST",
+                  "id": "totalBytes:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalBytes:AVG",
+                  "id": "totalBytes:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                }
+              ]
+            },
+            "dataQueryParams": {
+              "data": {
+                "time": {
+                  "latestNumBuckets": "10",
+                  "bucket": "1m"
+                },
+                "incompleteResultOK": true,
+                "keys": {
+                  "appName": [
+                    "Kafka-to-HDFS-Filter-Transform"
+                  ],
+                  "appUser": [
+                    "devendra"
+                  ],
+                  "logicalOperatorName": [
+                    "fileOutput"
+                  ]
+                },
+                "fields": [
+                  "time",
+                  "appName",
+                  "appUser",
+                  "logicalOperatorName",
+                  "byteCount:SUM"
+                ]
+              },
+              "incompleteResultOK": true,
+              "getDataContinuously": true,
+              "rangeType": "latestNumBuckets",
+              "dimensionId": "0",
+              "countdown": "1"
+            },
+            "loadingData": false,
+            "tags": {
+              "multiKeySelect": true
+            }
+          }
+        },
+        {
+          "title": "Events read per second from Kafka",
+          "name": "line chart",
+          "style": {
+
+          },
+          "size": {
+            "contentOverflow": "hidden",
+            "minHeight": "300px",
+            "minWidth": "500px",
+            "width": "50%",
+            "overflow": "hidden",
+            "height": "300"
+          },
+          "dataModelOptions": {
+            "dataSource": {
+              "displayName": "[HISTORICAL] OperatorStats(kafkaInput)  (user: devendra; app: Kafka-to-HDFS-Filter-Transform)",
+              "query": {
+                "operatorName": "DTOperatorStatsHistQuery",
+                "url": "pubsub",
+                "topic": "DTOperatorStatsHistQuery"
+              },
+              "result": {
+                "operatorName": "DTOperatorStatsHistResult",
+                "url": "pubsub",
+                "topic": "DTOperatorStatsHistResult",
+                "appendQIDToTopic": true
+              },
+              "type": "operatorStats",
+              "name": "[HISTORICAL] OperatorStats(kafkaInput) ",
+              "context": {
+                "keys": {
+                  "appName": "Kafka-to-HDFS-Filter-Transform",
+                  "appUser": "devendra",
+                  "logicalOperatorName": "kafkaInput"
+                }
+              },
+              "appName": "Kafka-to-HDFS-Filter-Transform",
+              "appUser": "devendra",
+              "appPackageSource": {
+                "user": "devendra",
+                "name": "kafka-to-hdfs-filter-transform",
+                "version": "0.9.0",
+                "appName": "Kafka-to-HDFS-Filter-Transform"
+              }
+            },
+            "schema": {
+              "schemaType": "dimensions",
+              "schemaVersion": "1.0",
+              "time": {
+                "slidingAggregateSupported": true,
+                "buckets": [
+                  "1m",
+                  "1h",
+                  "1d"
+                ]
+              },
+              "keys": [
+                {
+                  "name": "appName",
+                  "type": "string",
+                  "enumValues": [
+                    "Kafka-to-HDFS-Filter-Transform"
+                  ]
+                },
+                {
+                  "name": "appUser",
+                  "type": "string",
+                  "enumValues": [
+                    "devendra"
+                  ]
+                },
+                {
+                  "name": "logicalOperatorName",
+                  "type": "string",
+                  "enumValues": [
+                    "kafkaInput"
+                  ]
+                }
+              ],
+              "values": [
+
+              ],
+              "dimensions": [
+                {
+                  "combination": [
+                    "appName",
+                    "appUser",
+                    "logicalOperatorName"
+                  ],
+                  "additionalValues": [
+                    {
+                      "name": "totalTuplesProcessed:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalTuplesEmitted:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "tuplesProcessedPSMA:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "tuplesEmittedPSMA:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "checkpointTimeMA:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "latencyMA:AVG",
+                      "type": "long"
+                    },
+                    {
+                      "name": "latencyMA:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "cpuPercentageMA:LAST",
+                      "type": "double"
+                    },
+                    {
+                      "name": "currentWindowId:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "recoveryWindowId:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "failureCount:LAST",
+                      "type": "long"
+                    }
+                  ],
+                  "id": "0",
+                  "label": "appName, appUser, logicalOperatorName",
+                  "valueFields": [
+                    {
+                      "key": "totalTuplesProcessed:LAST",
+                      "id": "totalTuplesProcessed:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalTuplesEmitted:LAST",
+                      "id": "totalTuplesEmitted:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "tuplesProcessedPSMA:LAST",
+                      "id": "tuplesProcessedPSMA:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "tuplesEmittedPSMA:LAST",
+                      "id": "tuplesEmittedPSMA:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "checkpointTimeMA:LAST",
+                      "id": "checkpointTimeMA:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "latencyMA:AVG",
+                      "id": "latencyMA:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "latencyMA:LAST",
+                      "id": "latencyMA:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "cpuPercentageMA:LAST",
+                      "id": "cpuPercentageMA:LAST",
+                      "type": "double",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "currentWindowId:LAST",
+                      "id": "currentWindowId:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "recoveryWindowId:LAST",
+                      "id": "recoveryWindowId:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "failureCount:LAST",
+                      "id": "failureCount:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    }
+                  ]
+                }
+              ],
+              "timeFields": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                }
+              ],
+              "keyFields": [
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                }
+              ],
+              "fieldSelectionOptions": {
+                "initialSorts": [
+                  {
+                    "id": "id",
+                    "dir": "+"
+                  }
+                ],
+                "bgSizeMultiplier": "2",
+                "defaultRowHeight": "29",
+                "loading": false
+              },
+              "fieldSelectionColumns": [
+                {
+                  "id": "selector",
+                  "key": "id",
+                  "label": "",
+                  "selector": true,
+                  "width": "40px",
+                  "lockWidth": true
+                },
+                {
+                  "id": "id",
+                  "key": "id",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "id": "type",
+                  "key": "type",
+                  "sort": "string",
+                  "filter": "like"
+                }
+              ],
+              "valueFields": [
+
+              ],
+              "valueFieldsAllDimensions": [
+                {
+                  "key": "totalTuplesProcessed:LAST",
+                  "id": "totalTuplesProcessed:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalTuplesEmitted:LAST",
+                  "id": "totalTuplesEmitted:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "tuplesProcessedPSMA:LAST",
+                  "id": "tuplesProcessedPSMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "tuplesEmittedPSMA:LAST",
+                  "id": "tuplesEmittedPSMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "checkpointTimeMA:LAST",
+                  "id": "checkpointTimeMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "latencyMA:AVG",
+                  "id": "latencyMA:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "latencyMA:LAST",
+                  "id": "latencyMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "cpuPercentageMA:LAST",
+                  "id": "cpuPercentageMA:LAST",
+                  "type": "double",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "currentWindowId:LAST",
+                  "id": "currentWindowId:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "recoveryWindowId:LAST",
+                  "id": "recoveryWindowId:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "failureCount:LAST",
+                  "id": "failureCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                }
+              ],
+              "currentValues": [
+
+              ],
+              "fields": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                },
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                }
+              ],
+              "fieldsAllDimensions": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                },
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "totalTuplesProcessed:LAST",
+                  "id": "totalTuplesProcessed:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalTuplesEmitted:LAST",
+                  "id": "totalTuplesEmitted:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "tuplesProcessedPSMA:LAST",
+                  "id": "tuplesProcessedPSMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "tuplesEmittedPSMA:LAST",
+                  "id": "tuplesEmittedPSMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "checkpointTimeMA:LAST",
+                  "id": "checkpointTimeMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "latencyMA:AVG",
+                  "id": "latencyMA:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "latencyMA:LAST",
+                  "id": "latencyMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "cpuPercentageMA:LAST",
+                  "id": "cpuPercentageMA:LAST",
+                  "type": "double",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "currentWindowId:LAST",
+                  "id": "currentWindowId:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "recoveryWindowId:LAST",
+                  "id": "recoveryWindowId:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "failureCount:LAST",
+                  "id": "failureCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                }
+              ]
+            },
+            "dataQueryParams": {
+              "data": {
+                "time": {
+                  "latestNumBuckets": "10",
+                  "bucket": "1m"
+                },
+                "incompleteResultOK": true,
+                "keys": {
+                  "appName": [
+                    "Kafka-to-HDFS-Filter-Transform"
+                  ],
+                  "appUser": [
+                    "devendra"
+                  ],
+                  "logicalOperatorName": [
+                    "kafkaInput"
+                  ]
+                },
+                "fields": [
+                  "time",
+                  "appName",
+                  "appUser",
+                  "logicalOperatorName",
+                  "tuplesEmittedPSMA:LAST"
+                ]
+              },
+              "incompleteResultOK": true,
+              "getDataContinuously": true,
+              "rangeType": "latestNumBuckets",
+              "dimensionId": "0",
+              "countdown": "1"
+            },
+            "loadingData": false,
+            "tags": {
+              "multiKeySelect": true
+            }
+          }
+        },
+        {
+          "title": "Events written per second to HDFS",
+          "name": "line chart",
+          "style": {
+
+          },
+          "size": {
+            "contentOverflow": "hidden",
+            "minHeight": "300px",
+            "minWidth": "500px",
+            "width": "50%",
+            "overflow": "hidden",
+            "height": "300"
+          },
+          "dataModelOptions": {
+            "dataSource": {
+              "displayName": "[HISTORICAL] OperatorStats(fileOutput)  (user: devendra; app: Kafka-to-HDFS-Filter-Transform)",
+              "query": {
+                "operatorName": "DTOperatorStatsHistQuery",
+                "url": "pubsub",
+                "topic": "DTOperatorStatsHistQuery"
+              },
+              "result": {
+                "operatorName": "DTOperatorStatsHistResult",
+                "url": "pubsub",
+                "topic": "DTOperatorStatsHistResult",
+                "appendQIDToTopic": true
+              },
+              "type": "operatorStats",
+              "name": "[HISTORICAL] OperatorStats(fileOutput) ",
+              "context": {
+                "keys": {
+                  "appName": "Kafka-to-HDFS-Filter-Transform",
+                  "appUser": "devendra",
+                  "logicalOperatorName": "fileOutput"
+                }
+              },
+              "appName": "Kafka-to-HDFS-Filter-Transform",
+              "appUser": "devendra",
+              "appPackageSource": {
+                "user": "devendra",
+                "name": "kafka-to-hdfs-filter-transform",
+                "version": "0.9.0",
+                "appName": "Kafka-to-HDFS-Filter-Transform"
+              }
+            },
+            "schema": {
+              "schemaType": "dimensions",
+              "schemaVersion": "1.0",
+              "time": {
+                "slidingAggregateSupported": true,
+                "buckets": [
+                  "1m",
+                  "1h",
+                  "1d"
+                ]
+              },
+              "keys": [
+                {
+                  "name": "appName",
+                  "type": "string",
+                  "enumValues": [
+                    "Kafka-to-HDFS-Filter-Transform"
+                  ]
+                },
+                {
+                  "name": "appUser",
+                  "type": "string",
+                  "enumValues": [
+                    "devendra"
+                  ]
+                },
+                {
+                  "name": "logicalOperatorName",
+                  "type": "string",
+                  "enumValues": [
+                    "fileOutput"
+                  ]
+                }
+              ],
+              "values": [
+
+              ],
+              "dimensions": [
+                {
+                  "combination": [
+                    "appName",
+                    "appUser",
+                    "logicalOperatorName"
+                  ],
+                  "additionalValues": [
+                    {
+                      "name": "totalTuplesProcessed:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalTuplesEmitted:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "tuplesProcessedPSMA:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "tuplesEmittedPSMA:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "checkpointTimeMA:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "latencyMA:AVG",
+                      "type": "long"
+                    },
+                    {
+                      "name": "latencyMA:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "cpuPercentageMA:LAST",
+                      "type": "double"
+                    },
+                    {
+                      "name": "currentWindowId:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "recoveryWindowId:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "failureCount:LAST",
+                      "type": "long"
+                    }
+                  ],
+                  "id": "0",
+                  "label": "appName, appUser, logicalOperatorName",
+                  "valueFields": [
+                    {
+                      "key": "totalTuplesProcessed:LAST",
+                      "id": "totalTuplesProcessed:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalTuplesEmitted:LAST",
+                      "id": "totalTuplesEmitted:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "tuplesProcessedPSMA:LAST",
+                      "id": "tuplesProcessedPSMA:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "tuplesEmittedPSMA:LAST",
+                      "id": "tuplesEmittedPSMA:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "checkpointTimeMA:LAST",
+                      "id": "checkpointTimeMA:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "latencyMA:AVG",
+                      "id": "latencyMA:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "latencyMA:LAST",
+                      "id": "latencyMA:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "cpuPercentageMA:LAST",
+                      "id": "cpuPercentageMA:LAST",
+                      "type": "double",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "currentWindowId:LAST",
+                      "id": "currentWindowId:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "recoveryWindowId:LAST",
+                      "id": "recoveryWindowId:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "failureCount:LAST",
+                      "id": "failureCount:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    }
+                  ]
+                }
+              ],
+              "timeFields": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                }
+              ],
+              "keyFields": [
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                }
+              ],
+              "fieldSelectionOptions": {
+                "initialSorts": [
+                  {
+                    "id": "id",
+                    "dir": "+"
+                  }
+                ],
+                "bgSizeMultiplier": "2",
+                "defaultRowHeight": "29",
+                "loading": false
+              },
+              "fieldSelectionColumns": [
+                {
+                  "id": "selector",
+                  "key": "id",
+                  "label": "",
+                  "selector": true,
+                  "width": "40px",
+                  "lockWidth": true
+                },
+                {
+                  "id": "id",
+                  "key": "id",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "id": "type",
+                  "key": "type",
+                  "sort": "string",
+                  "filter": "like"
+                }
+              ],
+              "valueFields": [
+
+              ],
+              "valueFieldsAllDimensions": [
+                {
+                  "key": "totalTuplesProcessed:LAST",
+                  "id": "totalTuplesProcessed:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalTuplesEmitted:LAST",
+                  "id": "totalTuplesEmitted:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "tuplesProcessedPSMA:LAST",
+                  "id": "tuplesProcessedPSMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "tuplesEmittedPSMA:LAST",
+                  "id": "tuplesEmittedPSMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "checkpointTimeMA:LAST",
+                  "id": "checkpointTimeMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "latencyMA:AVG",
+                  "id": "latencyMA:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "latencyMA:LAST",
+                  "id": "latencyMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "cpuPercentageMA:LAST",
+                  "id": "cpuPercentageMA:LAST",
+                  "type": "double",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "currentWindowId:LAST",
+                  "id": "currentWindowId:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "recoveryWindowId:LAST",
+                  "id": "recoveryWindowId:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "failureCount:LAST",
+                  "id": "failureCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                }
+              ],
+              "currentValues": [
+
+              ],
+              "fields": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                },
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                }
+              ],
+              "fieldsAllDimensions": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                },
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "totalTuplesProcessed:LAST",
+                  "id": "totalTuplesProcessed:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalTuplesEmitted:LAST",
+                  "id": "totalTuplesEmitted:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "tuplesProcessedPSMA:LAST",
+                  "id": "tuplesProcessedPSMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "tuplesEmittedPSMA:LAST",
+                  "id": "tuplesEmittedPSMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "checkpointTimeMA:LAST",
+                  "id": "checkpointTimeMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "latencyMA:AVG",
+                  "id": "latencyMA:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "latencyMA:LAST",
+                  "id": "latencyMA:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "cpuPercentageMA:LAST",
+                  "id": "cpuPercentageMA:LAST",
+                  "type": "double",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "currentWindowId:LAST",
+                  "id": "currentWindowId:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "recoveryWindowId:LAST",
+                  "id": "recoveryWindowId:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "failureCount:LAST",
+                  "id": "failureCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                }
+              ]
+            },
+            "dataQueryParams": {
+              "data": {
+                "time": {
+                  "latestNumBuckets": "10",
+                  "bucket": "1m"
+                },
+                "incompleteResultOK": true,
+                "keys": {
+                  "appName": [
+                    "Kafka-to-HDFS-Filter-Transform"
+                  ],
+                  "appUser": [
+                    "devendra"
+                  ],
+                  "logicalOperatorName": [
+                    "fileOutput"
+                  ]
+                },
+                "fields": [
+                  "time",
+                  "appName",
+                  "appUser",
+                  "logicalOperatorName",
+                  "tuplesProcessedPSMA:LAST"
+                ]
+              },
+              "incompleteResultOK": true,
+              "getDataContinuously": true,
+              "rangeType": "latestNumBuckets",
+              "dimensionId": "0",
+              "countdown": "1"
+            },
+            "loadingData": false,
+            "tags": {
+              "multiKeySelect": true
+            }
+          }
+        },
+        {
+          "title": "Number of bad events per minute",
+          "name": "line chart",
+          "style": {
+
+          },
+          "size": {
+            "contentOverflow": "hidden",
+            "minHeight": "300px",
+            "minWidth": "500px",
+            "width": "50%",
+            "overflow": "hidden",
+            "height": "300"
+          },
+          "dataModelOptions": {
+            "dataSource": {
+              "displayName": "[HISTORICAL] OperatorMetrics(parser)  (user: devendra; app: Kafka-to-HDFS-Filter-Transform)",
+              "query": {
+                "operatorName": "DTMetricsHistQuery",
+                "url": "pubsub",
+                "topic": "DTMetricsHistQuery"
+              },
+              "result": {
+                "operatorName": "DTMetricsHistResult",
+                "url": "pubsub",
+                "topic": "DTMetricsHistResult",
+                "appendQIDToTopic": true
+              },
+              "type": "metrics",
+              "name": "[HISTORICAL] OperatorMetrics(parser) ",
+              "context": {
+                "keys": {
+                  "appName": "Kafka-to-HDFS-Filter-Transform",
+                  "appUser": "devendra",
+                  "logicalOperatorName": "parser"
+                }
+              },
+              "appName": "Kafka-to-HDFS-Filter-Transform",
+              "appUser": "devendra",
+              "appPackageSource": {
+                "user": "devendra",
+                "name": "kafka-to-hdfs-filter-transform",
+                "version": "0.9.0",
+                "appName": "Kafka-to-HDFS-Filter-Transform"
+              }
+            },
+            "schema": {
+              "schemaType": "dimensions",
+              "schemaVersion": "1.0",
+              "time": {
+                "slidingAggregateSupported": true,
+                "buckets": [
+                  "1m",
+                  "1h",
+                  "1d"
+                ]
+              },
+              "keys": [
+                {
+                  "name": "appName",
+                  "type": "string",
+                  "enumValues": [
+                    "Kafka-to-HDFS-Filter-Transform"
+                  ]
+                },
+                {
+                  "name": "appUser",
+                  "type": "string",
+                  "enumValues": [
+                    "devendra"
+                  ]
+                },
+                {
+                  "name": "logicalOperatorName",
+                  "type": "string",
+                  "enumValues": [
+                    "parser"
+                  ]
+                }
+              ],
+              "values": [
+
+              ],
+              "dimensions": [
+                {
+                  "combination": [
+                    "appName",
+                    "appUser",
+                    "logicalOperatorName"
+                  ],
+                  "additionalValues": [
+                    {
+                      "name": "emittedObjectCount:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "emittedObjectCount:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "emittedObjectCount:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "emittedObjectCount:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "emittedObjectCount:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "emittedObjectCount:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "emittedObjectCount:AVG",
+                      "type": "long"
+                    },
+                    {
+                      "name": "parsedOutputCount:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "parsedOutputCount:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "parsedOutputCount:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "parsedOutputCount:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "parsedOutputCount:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "parsedOutputCount:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "parsedOutputCount:AVG",
+                      "type": "long"
+                    },
+                    {
+                      "name": "errorTupleCount:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "errorTupleCount:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "errorTupleCount:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "errorTupleCount:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "errorTupleCount:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "errorTupleCount:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "errorTupleCount:AVG",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalErrorTuples:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalErrorTuples:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalErrorTuples:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalErrorTuples:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalErrorTuples:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalErrorTuples:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalErrorTuples:AVG",
+                      "type": "long"
+                    },
+                    {
+                      "name": "incomingTuplesCount:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "incomingTuplesCount:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "incomingTuplesCount:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "incomingTuplesCount:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "incomingTuplesCount:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "incomingTuplesCount:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "incomingTuplesCount:AVG",
+                      "type": "long"
+                    }
+                  ],
+                  "id": "0",
+                  "label": "appName, appUser, logicalOperatorName",
+                  "valueFields": [
+                    {
+                      "key": "emittedObjectCount:SUM",
+                      "id": "emittedObjectCount:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "emittedObjectCount:MIN",
+                      "id": "emittedObjectCount:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "emittedObjectCount:MAX",
+                      "id": "emittedObjectCount:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "emittedObjectCount:COUNT",
+                      "id": "emittedObjectCount:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "emittedObjectCount:FIRST",
+                      "id": "emittedObjectCount:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "emittedObjectCount:LAST",
+                      "id": "emittedObjectCount:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "emittedObjectCount:AVG",
+                      "id": "emittedObjectCount:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "parsedOutputCount:SUM",
+                      "id": "parsedOutputCount:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "parsedOutputCount:MIN",
+                      "id": "parsedOutputCount:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "parsedOutputCount:MAX",
+                      "id": "parsedOutputCount:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "parsedOutputCount:COUNT",
+                      "id": "parsedOutputCount:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "parsedOutputCount:FIRST",
+                      "id": "parsedOutputCount:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "parsedOutputCount:LAST",
+                      "id": "parsedOutputCount:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "parsedOutputCount:AVG",
+                      "id": "parsedOutputCount:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "errorTupleCount:SUM",
+                      "id": "errorTupleCount:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "errorTupleCount:MIN",
+                      "id": "errorTupleCount:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "errorTupleCount:MAX",
+                      "id": "errorTupleCount:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "errorTupleCount:COUNT",
+                      "id": "errorTupleCount:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "errorTupleCount:FIRST",
+                      "id": "errorTupleCount:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "errorTupleCount:LAST",
+                      "id": "errorTupleCount:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "errorTupleCount:AVG",
+                      "id": "errorTupleCount:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalErrorTuples:SUM",
+                      "id": "totalErrorTuples:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalErrorTuples:MIN",
+                      "id": "totalErrorTuples:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalErrorTuples:MAX",
+                      "id": "totalErrorTuples:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalErrorTuples:COUNT",
+                      "id": "totalErrorTuples:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalErrorTuples:FIRST",
+                      "id": "totalErrorTuples:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalErrorTuples:LAST",
+                      "id": "totalErrorTuples:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalErrorTuples:AVG",
+                      "id": "totalErrorTuples:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "incomingTuplesCount:SUM",
+                      "id": "incomingTuplesCount:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "incomingTuplesCount:MIN",
+                      "id": "incomingTuplesCount:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "incomingTuplesCount:MAX",
+                      "id": "incomingTuplesCount:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "incomingTuplesCount:COUNT",
+                      "id": "incomingTuplesCount:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "incomingTuplesCount:FIRST",
+                      "id": "incomingTuplesCount:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "incomingTuplesCount:LAST",
+                      "id": "incomingTuplesCount:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "incomingTuplesCount:AVG",
+                      "id": "incomingTuplesCount:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    }
+                  ]
+                }
+              ],
+              "timeFields": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                }
+              ],
+              "keyFields": [
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                }
+              ],
+              "fieldSelectionOptions": {
+                "initialSorts": [
+                  {
+                    "id": "id",
+                    "dir": "+"
+                  }
+                ],
+                "bgSizeMultiplier": "2",
+                "defaultRowHeight": "29",
+                "loading": false
+              },
+              "fieldSelectionColumns": [
+                {
+                  "id": "selector",
+                  "key": "id",
+                  "label": "",
+                  "selector": true,
+                  "width": "40px",
+                  "lockWidth": true
+                },
+                {
+                  "id": "id",
+                  "key": "id",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "id": "type",
+                  "key": "type",
+                  "sort": "string",
+                  "filter": "like"
+                }
+              ],
+              "valueFields": [
+
+              ],
+              "valueFieldsAllDimensions": [
+                {
+                  "key": "emittedObjectCount:SUM",
+                  "id": "emittedObjectCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:MIN",
+                  "id": "emittedObjectCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:MAX",
+                  "id": "emittedObjectCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:COUNT",
+                  "id": "emittedObjectCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:FIRST",
+                  "id": "emittedObjectCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:LAST",
+                  "id": "emittedObjectCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:AVG",
+                  "id": "emittedObjectCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:SUM",
+                  "id": "parsedOutputCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:MIN",
+                  "id": "parsedOutputCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:MAX",
+                  "id": "parsedOutputCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:COUNT",
+                  "id": "parsedOutputCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:FIRST",
+                  "id": "parsedOutputCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:LAST",
+                  "id": "parsedOutputCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:AVG",
+                  "id": "parsedOutputCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:SUM",
+                  "id": "errorTupleCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:MIN",
+                  "id": "errorTupleCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:MAX",
+                  "id": "errorTupleCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:COUNT",
+                  "id": "errorTupleCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:FIRST",
+                  "id": "errorTupleCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:LAST",
+                  "id": "errorTupleCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:AVG",
+                  "id": "errorTupleCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:SUM",
+                  "id": "totalErrorTuples:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:MIN",
+                  "id": "totalErrorTuples:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:MAX",
+                  "id": "totalErrorTuples:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:COUNT",
+                  "id": "totalErrorTuples:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:FIRST",
+                  "id": "totalErrorTuples:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:LAST",
+                  "id": "totalErrorTuples:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:AVG",
+                  "id": "totalErrorTuples:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:SUM",
+                  "id": "incomingTuplesCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:MIN",
+                  "id": "incomingTuplesCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:MAX",
+                  "id": "incomingTuplesCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:COUNT",
+                  "id": "incomingTuplesCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:FIRST",
+                  "id": "incomingTuplesCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:LAST",
+                  "id": "incomingTuplesCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:AVG",
+                  "id": "incomingTuplesCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                }
+              ],
+              "currentValues": [
+
+              ],
+              "fields": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                },
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                }
+              ],
+              "fieldsAllDimensions": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                },
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "emittedObjectCount:SUM",
+                  "id": "emittedObjectCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:MIN",
+                  "id": "emittedObjectCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:MAX",
+                  "id": "emittedObjectCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:COUNT",
+                  "id": "emittedObjectCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:FIRST",
+                  "id": "emittedObjectCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:LAST",
+                  "id": "emittedObjectCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:AVG",
+                  "id": "emittedObjectCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:SUM",
+                  "id": "parsedOutputCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:MIN",
+                  "id": "parsedOutputCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:MAX",
+                  "id": "parsedOutputCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:COUNT",
+                  "id": "parsedOutputCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:FIRST",
+                  "id": "parsedOutputCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:LAST",
+                  "id": "parsedOutputCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:AVG",
+                  "id": "parsedOutputCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:SUM",
+                  "id": "errorTupleCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:MIN",
+                  "id": "errorTupleCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:MAX",
+                  "id": "errorTupleCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:COUNT",
+                  "id": "errorTupleCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:FIRST",
+                  "id": "errorTupleCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:LAST",
+                  "id": "errorTupleCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:AVG",
+                  "id": "errorTupleCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:SUM",
+                  "id": "totalErrorTuples:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:MIN",
+                  "id": "totalErrorTuples:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:MAX",
+                  "id": "totalErrorTuples:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:COUNT",
+                  "id": "totalErrorTuples:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:FIRST",
+                  "id": "totalErrorTuples:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:LAST",
+                  "id": "totalErrorTuples:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:AVG",
+                  "id": "totalErrorTuples:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:SUM",
+                  "id": "incomingTuplesCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:MIN",
+                  "id": "incomingTuplesCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:MAX",
+                  "id": "incomingTuplesCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:COUNT",
+                  "id": "incomingTuplesCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:FIRST",
+                  "id": "incomingTuplesCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:LAST",
+                  "id": "incomingTuplesCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:AVG",
+                  "id": "incomingTuplesCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                }
+              ]
+            },
+            "dataQueryParams": {
+              "data": {
+                "time": {
+                  "latestNumBuckets": "10",
+                  "bucket": "1m"
+                },
+                "incompleteResultOK": true,
+                "keys": {
+                  "appName": [
+                    "Kafka-to-HDFS-Filter-Transform"
+                  ],
+                  "appUser": [
+                    "devendra"
+                  ],
+                  "logicalOperatorName": [
+                    "parser"
+                  ]
+                },
+                "fields": [
+                  "time",
+                  "appName",
+                  "appUser",
+                  "logicalOperatorName",
+                  "errorTupleCount:SUM"
+                ]
+              },
+              "incompleteResultOK": true,
+              "getDataContinuously": true,
+              "rangeType": "latestNumBuckets",
+              "dimensionId": "0",
+              "countdown": "1"
+            },
+            "loadingData": false,
+            "tags": {
+              "multiKeySelect": true
+            }
+          }
+        },
+        {
+          "title": "Total number of bad events",
+          "name": "line chart",
+          "style": {
+
+          },
+          "size": {
+            "contentOverflow": "hidden",
+            "minHeight": "300px",
+            "minWidth": "500px",
+            "width": "50%",
+            "overflow": "hidden",
+            "height": "300"
+          },
+          "dataModelOptions": {
+            "dataSource": {
+              "displayName": "[HISTORICAL] OperatorMetrics(parser)  (user: devendra; app: Kafka-to-HDFS-Filter-Transform)",
+              "query": {
+                "operatorName": "DTMetricsHistQuery",
+                "url": "pubsub",
+                "topic": "DTMetricsHistQuery"
+              },
+              "result": {
+                "operatorName": "DTMetricsHistResult",
+                "url": "pubsub",
+                "topic": "DTMetricsHistResult",
+                "appendQIDToTopic": true
+              },
+              "type": "metrics",
+              "name": "[HISTORICAL] OperatorMetrics(parser) ",
+              "context": {
+                "keys": {
+                  "appName": "Kafka-to-HDFS-Filter-Transform",
+                  "appUser": "devendra",
+                  "logicalOperatorName": "parser"
+                }
+              },
+              "appName": "Kafka-to-HDFS-Filter-Transform",
+              "appUser": "devendra",
+              "appPackageSource": {
+                "user": "devendra",
+                "name": "kafka-to-hdfs-filter-transform",
+                "version": "0.9.0",
+                "appName": "Kafka-to-HDFS-Filter-Transform"
+              }
+            },
+            "schema": {
+              "schemaType": "dimensions",
+              "schemaVersion": "1.0",
+              "time": {
+                "slidingAggregateSupported": true,
+                "buckets": [
+                  "1m",
+                  "1h",
+                  "1d"
+                ]
+              },
+              "keys": [
+                {
+                  "name": "appName",
+                  "type": "string",
+                  "enumValues": [
+                    "Kafka-to-HDFS-Filter-Transform"
+                  ]
+                },
+                {
+                  "name": "appUser",
+                  "type": "string",
+                  "enumValues": [
+                    "devendra"
+                  ]
+                },
+                {
+                  "name": "logicalOperatorName",
+                  "type": "string",
+                  "enumValues": [
+                    "parser"
+                  ]
+                }
+              ],
+              "values": [
+
+              ],
+              "dimensions": [
+                {
+                  "combination": [
+                    "appName",
+                    "appUser",
+                    "logicalOperatorName"
+                  ],
+                  "additionalValues": [
+                    {
+                      "name": "emittedObjectCount:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "emittedObjectCount:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "emittedObjectCount:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "emittedObjectCount:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "emittedObjectCount:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "emittedObjectCount:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "emittedObjectCount:AVG",
+                      "type": "long"
+                    },
+                    {
+                      "name": "parsedOutputCount:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "parsedOutputCount:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "parsedOutputCount:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "parsedOutputCount:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "parsedOutputCount:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "parsedOutputCount:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "parsedOutputCount:AVG",
+                      "type": "long"
+                    },
+                    {
+                      "name": "errorTupleCount:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "errorTupleCount:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "errorTupleCount:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "errorTupleCount:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "errorTupleCount:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "errorTupleCount:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "errorTupleCount:AVG",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalErrorTuples:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalErrorTuples:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalErrorTuples:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalErrorTuples:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalErrorTuples:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalErrorTuples:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "totalErrorTuples:AVG",
+                      "type": "long"
+                    },
+                    {
+                      "name": "incomingTuplesCount:SUM",
+                      "type": "long"
+                    },
+                    {
+                      "name": "incomingTuplesCount:MIN",
+                      "type": "long"
+                    },
+                    {
+                      "name": "incomingTuplesCount:MAX",
+                      "type": "long"
+                    },
+                    {
+                      "name": "incomingTuplesCount:COUNT",
+                      "type": "long"
+                    },
+                    {
+                      "name": "incomingTuplesCount:FIRST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "incomingTuplesCount:LAST",
+                      "type": "long"
+                    },
+                    {
+                      "name": "incomingTuplesCount:AVG",
+                      "type": "long"
+                    }
+                  ],
+                  "id": "0",
+                  "label": "appName, appUser, logicalOperatorName",
+                  "valueFields": [
+                    {
+                      "key": "emittedObjectCount:SUM",
+                      "id": "emittedObjectCount:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "emittedObjectCount:MIN",
+                      "id": "emittedObjectCount:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "emittedObjectCount:MAX",
+                      "id": "emittedObjectCount:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "emittedObjectCount:COUNT",
+                      "id": "emittedObjectCount:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "emittedObjectCount:FIRST",
+                      "id": "emittedObjectCount:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "emittedObjectCount:LAST",
+                      "id": "emittedObjectCount:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "emittedObjectCount:AVG",
+                      "id": "emittedObjectCount:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "parsedOutputCount:SUM",
+                      "id": "parsedOutputCount:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "parsedOutputCount:MIN",
+                      "id": "parsedOutputCount:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "parsedOutputCount:MAX",
+                      "id": "parsedOutputCount:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "parsedOutputCount:COUNT",
+                      "id": "parsedOutputCount:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "parsedOutputCount:FIRST",
+                      "id": "parsedOutputCount:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "parsedOutputCount:LAST",
+                      "id": "parsedOutputCount:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "parsedOutputCount:AVG",
+                      "id": "parsedOutputCount:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "errorTupleCount:SUM",
+                      "id": "errorTupleCount:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "errorTupleCount:MIN",
+                      "id": "errorTupleCount:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "errorTupleCount:MAX",
+                      "id": "errorTupleCount:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "errorTupleCount:COUNT",
+                      "id": "errorTupleCount:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "errorTupleCount:FIRST",
+                      "id": "errorTupleCount:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "errorTupleCount:LAST",
+                      "id": "errorTupleCount:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "errorTupleCount:AVG",
+                      "id": "errorTupleCount:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalErrorTuples:SUM",
+                      "id": "totalErrorTuples:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalErrorTuples:MIN",
+                      "id": "totalErrorTuples:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalErrorTuples:MAX",
+                      "id": "totalErrorTuples:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalErrorTuples:COUNT",
+                      "id": "totalErrorTuples:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalErrorTuples:FIRST",
+                      "id": "totalErrorTuples:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalErrorTuples:LAST",
+                      "id": "totalErrorTuples:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "totalErrorTuples:AVG",
+                      "id": "totalErrorTuples:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "incomingTuplesCount:SUM",
+                      "id": "incomingTuplesCount:SUM",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "incomingTuplesCount:MIN",
+                      "id": "incomingTuplesCount:MIN",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "incomingTuplesCount:MAX",
+                      "id": "incomingTuplesCount:MAX",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "incomingTuplesCount:COUNT",
+                      "id": "incomingTuplesCount:COUNT",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "incomingTuplesCount:FIRST",
+                      "id": "incomingTuplesCount:FIRST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "incomingTuplesCount:LAST",
+                      "id": "incomingTuplesCount:LAST",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    },
+                    {
+                      "key": "incomingTuplesCount:AVG",
+                      "id": "incomingTuplesCount:AVG",
+                      "type": "long",
+                      "sort": "number",
+                      "filter": "number"
+                    }
+                  ]
+                }
+              ],
+              "timeFields": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                }
+              ],
+              "keyFields": [
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                }
+              ],
+              "fieldSelectionOptions": {
+                "initialSorts": [
+                  {
+                    "id": "id",
+                    "dir": "+"
+                  }
+                ],
+                "bgSizeMultiplier": "2",
+                "defaultRowHeight": "29",
+                "loading": false
+              },
+              "fieldSelectionColumns": [
+                {
+                  "id": "selector",
+                  "key": "id",
+                  "label": "",
+                  "selector": true,
+                  "width": "40px",
+                  "lockWidth": true
+                },
+                {
+                  "id": "id",
+                  "key": "id",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "id": "type",
+                  "key": "type",
+                  "sort": "string",
+                  "filter": "like"
+                }
+              ],
+              "valueFields": [
+
+              ],
+              "valueFieldsAllDimensions": [
+                {
+                  "key": "emittedObjectCount:SUM",
+                  "id": "emittedObjectCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:MIN",
+                  "id": "emittedObjectCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:MAX",
+                  "id": "emittedObjectCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:COUNT",
+                  "id": "emittedObjectCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:FIRST",
+                  "id": "emittedObjectCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:LAST",
+                  "id": "emittedObjectCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:AVG",
+                  "id": "emittedObjectCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:SUM",
+                  "id": "parsedOutputCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:MIN",
+                  "id": "parsedOutputCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:MAX",
+                  "id": "parsedOutputCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:COUNT",
+                  "id": "parsedOutputCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:FIRST",
+                  "id": "parsedOutputCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:LAST",
+                  "id": "parsedOutputCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:AVG",
+                  "id": "parsedOutputCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:SUM",
+                  "id": "errorTupleCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:MIN",
+                  "id": "errorTupleCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:MAX",
+                  "id": "errorTupleCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:COUNT",
+                  "id": "errorTupleCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:FIRST",
+                  "id": "errorTupleCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:LAST",
+                  "id": "errorTupleCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:AVG",
+                  "id": "errorTupleCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:SUM",
+                  "id": "totalErrorTuples:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:MIN",
+                  "id": "totalErrorTuples:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:MAX",
+                  "id": "totalErrorTuples:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:COUNT",
+                  "id": "totalErrorTuples:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:FIRST",
+                  "id": "totalErrorTuples:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:LAST",
+                  "id": "totalErrorTuples:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:AVG",
+                  "id": "totalErrorTuples:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:SUM",
+                  "id": "incomingTuplesCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:MIN",
+                  "id": "incomingTuplesCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:MAX",
+                  "id": "incomingTuplesCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:COUNT",
+                  "id": "incomingTuplesCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:FIRST",
+                  "id": "incomingTuplesCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:LAST",
+                  "id": "incomingTuplesCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:AVG",
+                  "id": "incomingTuplesCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                }
+              ],
+              "currentValues": [
+
+              ],
+              "fields": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                },
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                }
+              ],
+              "fieldsAllDimensions": [
+                {
+                  "id": "time",
+                  "key": "time",
+                  "sort": "number",
+                  "filter": "date",
+                  "type": "date",
+                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                },
+                {
+                  "key": "appName",
+                  "id": "appName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "appUser",
+                  "id": "appUser",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "logicalOperatorName",
+                  "id": "logicalOperatorName",
+                  "sort": "string",
+                  "filter": "like",
+                  "type": "string"
+                },
+                {
+                  "key": "emittedObjectCount:SUM",
+                  "id": "emittedObjectCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:MIN",
+                  "id": "emittedObjectCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:MAX",
+                  "id": "emittedObjectCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:COUNT",
+                  "id": "emittedObjectCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:FIRST",
+                  "id": "emittedObjectCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:LAST",
+                  "id": "emittedObjectCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "emittedObjectCount:AVG",
+                  "id": "emittedObjectCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:SUM",
+                  "id": "parsedOutputCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:MIN",
+                  "id": "parsedOutputCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:MAX",
+                  "id": "parsedOutputCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:COUNT",
+                  "id": "parsedOutputCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:FIRST",
+                  "id": "parsedOutputCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:LAST",
+                  "id": "parsedOutputCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "parsedOutputCount:AVG",
+                  "id": "parsedOutputCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:SUM",
+                  "id": "errorTupleCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:MIN",
+                  "id": "errorTupleCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:MAX",
+                  "id": "errorTupleCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:COUNT",
+                  "id": "errorTupleCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:FIRST",
+                  "id": "errorTupleCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:LAST",
+                  "id": "errorTupleCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "errorTupleCount:AVG",
+                  "id": "errorTupleCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:SUM",
+                  "id": "totalErrorTuples:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:MIN",
+                  "id": "totalErrorTuples:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:MAX",
+                  "id": "totalErrorTuples:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:COUNT",
+                  "id": "totalErrorTuples:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:FIRST",
+                  "id": "totalErrorTuples:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:LAST",
+                  "id": "totalErrorTuples:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "totalErrorTuples:AVG",
+                  "id": "totalErrorTuples:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:SUM",
+                  "id": "incomingTuplesCount:SUM",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:MIN",
+                  "id": "incomingTuplesCount:MIN",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:MAX",
+                  "id": "incomingTuplesCount:MAX",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:COUNT",
+                  "id": "incomingTuplesCount:COUNT",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:FIRST",
+                  "id": "incomingTuplesCount:FIRST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:LAST",
+                  "id": "incomingTuplesCount:LAST",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                },
+                {
+                  "key": "incomingTuplesCount:AVG",
+                  "id": "incomingTuplesCount:AVG",
+                  "type": "long",
+                  "sort": "number",
+                  "filter": "number"
+                }
+              ]
+            },
+            "dataQueryParams": {
+              "data": {
+                "time": {
+                  "latestNumBuckets": "10",
+                  "bucket": "1m"
+                },
+                "incompleteResultOK": true,
+                "keys": {
+                  "appName": [
+                    "Kafka-to-HDFS-Filter-Transform"
+                  ],
+                  "appUser": [
+                    "devendra"
+                  ],
+                  "logicalOperatorName": [
+                    "parser"
+                  ]
+                },
+                "fields": [
+                  "time",
+                  "appName",
+                  "appUser",
+                  "logicalOperatorName",
+                  "totalErrorTuples:LAST"
+                ]
+              },
+              "incompleteResultOK": true,
+              "getDataContinuously": true,
+              "rangeType": "latestNumBuckets",
+              "dimensionId": "0",
+              "countdown": "1"
+            },
+            "loadingData": false,
+            "tags": {
+              "multiKeySelect": true
+            }
+          }
+        }
+      ]
+    }
+  },
+  "id": "devendra:Kafka-to-HDFS-Filter-Transform",
+  "description": "automatically generated dashboard",
+  "mtime": "2017-06-26T05:20:47.695Z"
+}

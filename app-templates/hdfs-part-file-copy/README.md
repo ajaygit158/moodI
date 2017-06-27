@@ -18,13 +18,13 @@ Import and run the application template as an operable proof of concept. Please 
 
 Here is a preview of the logical plan of the application template
 
-![Logical Plan](Update Link here)
+![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2017/06/HDFS_Part_File_Copy_DAG.png)
 
 ### Launch App Properties
 
 Here is a preview of the properties to be set at application launch
 
-![Launch App Properties](Update Link here)
+![Launch App Properties](https://www.datatorrent.com/wp-content/uploads/2017/06/HDFS_Part_File_Copy_Properties.png)
 
 ### Resources
 

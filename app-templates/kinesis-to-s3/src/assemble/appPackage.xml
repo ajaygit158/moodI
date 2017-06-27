@@ -38,6 +38,5 @@
       <outputDirectory>/resources</outputDirectory>
     </fileSet>
   </fileSets>
-
 </assembly>
 

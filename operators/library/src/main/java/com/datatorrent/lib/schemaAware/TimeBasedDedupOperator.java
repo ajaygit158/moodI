@@ -3,12 +3,15 @@ package com.datatorrent.lib.schemaAware;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.hadoop.classification.InterfaceStability;
+
 import com.datatorrent.schema.api.Schema;
 import com.datatorrent.schema.api.SchemaAware;
 
 /**
  * Schema Aware Dedup Operator
  */
+@InterfaceStability.Evolving
 public class TimeBasedDedupOperator extends org.apache.apex.malhar.lib.dedup.TimeBasedDedupOperator
     implements SchemaAware
 {

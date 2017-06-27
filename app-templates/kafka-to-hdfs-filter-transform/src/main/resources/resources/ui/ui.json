@@ -1,0 +1,10 @@
+{
+  "dashboards": [
+    {
+      "name": "Kafka-to-HDFS-Filter-Transform",
+      "file": "Kafka-to-HDFS-Filter-Transform.dtdashboard"
+    }
+  ]
+}
+
+

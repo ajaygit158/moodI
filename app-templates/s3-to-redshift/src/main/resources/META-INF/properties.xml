@@ -25,7 +25,7 @@
     <description>Specify the comma separated files/directories to scan</description>
   </property>
   <property>
-    <name>dt.operator.S3Input.prop.filesForScanning</name>
+    <name>dt.operator.S3Input.prop.files</name>
     <value>${apex.app-param.filesForScanning}</value>
   </property>
   <property>
@@ -45,6 +45,10 @@
     <name>dt.operator.RedshiftOutput.prop.accessKey</name>
     <value>${apex.app-param.accessKeyForS3Input}</value>
   </property>
+  <property>
+    <name>dt.operator.S3Input.prop.accessKey</name>
+    <value>${apex.app-param.accessKeyForS3Input}</value>
+  </property>
 
   <property>
     <name>apex.app-param.secretKeyForS3Input</name>
@@ -52,6 +56,10 @@
   </property>
   <property>
     <name>dt.operator.RedshiftOutput.prop.secretKey</name>
+    <value>${apex.app-param.secretKeyForS3Input}</value>
+  </property>
+  <property>
+    <name>dt.operator.S3Input.prop.secretKey</name>
     <value>${apex.app-param.secretKeyForS3Input}</value>
   </property>
 
@@ -247,6 +255,11 @@
   <property>
     <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
     <value>${apex.app-param.tupleClassNameForTransformOutput}</value>
+  </property>
+
+  <property>
+    <name>apex.plugin.stram.plugins</name>
+    <value>com.datatorrent.metrics.plugin.MetricWriterPlugin</value>
   </property>
 
 </configuration>

@@ -1,0 +1,9 @@
+{
+  "dashboards": [
+    {
+      "name": "Kinesis To S3 App",
+      "file": "kinesis-to-S3.dtdashboard",
+      "appNames": ["kinesis-to-S3"]
+    }
+  ]
+}

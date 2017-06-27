@@ -125,9 +125,9 @@
   </dependencies>
   
   <modules>
-  	<module>app-templates</module>
-  	<module>solutions</module>
-  	<module>operators</module>
+    <module>operators</module>
+    <module>app-templates</module>
+    <module>solutions</module>
   </modules>
   
 </project>

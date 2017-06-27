@@ -19,6 +19,7 @@
     under the License.
 
 -->
+
 <configuration>
   
   <property>
@@ -29,6 +30,7 @@
     <name>dt.operator.kafkaInput.prop.clusters</name>
     <value>${apex.app-param.kafkaBrokerList}</value>
   </property>
+
 
   <property>
     <name>apex.app-param.kafkaTopicName</name>
@@ -57,6 +59,24 @@
     <name>dt.operator.filter.prop.condition</name>
     <value>${apex.app-param.FilterConditionForTuples}</value>
   </property>
+  
+   <property>
+    <name>apex.app-param.transformOutputFieldInfo</name>
+    <description>Specify json string with output field name and its data type. Possible values for data types are BOOLEAN,DOUBLE,INTEGER,FLOAT,LONG,SHORT,CHARACTER,STRING,DATE E.g. {"uniqueAdId":"INTEGER","cost":"DOUBLE"}</description>
+  </property> 
+  <property>
+    <name>dt.operator.transform.prop.outputFieldInfo</name>
+    <value>${apex.app-param.transformOutputFieldInfo}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.transformExpressionInfo</name>
+    <description>Specify json string with output field name and expression. E.g. {"uniqueAdId":"{$.adId}","cost":"{$.bidPrice} * 2.0"} </description>
+  </property> 
+  <property>
+    <name>dt.operator.transform.prop.expressionInfo</name>
+    <value>${apex.app-param.transformExpressionInfo}</value>
+  </property>
 
   <property>
     <name>apex.app-param.outputDirectoryPath</name>
@@ -68,6 +88,15 @@
   </property>
 
   <property>
+    <name>apex.app-param.parserFieldInfo</name>
+    <description>Specify fields and their data types in Json Format. Possible values for data types are BOOLEAN,DOUBLE,INTEGER,FLOAT,LONG,SHORT,CHARACTER,STRING,DATE E.g {"adId":"INTEGER","adName":"STRING","bidPrice":"DOUBLE"}</description>
+  </property>
+  <property>
+    <name>dt.operator.parser.prop.fieldInfo</name>
+    <value>${apex.app-param.parserFieldInfo}</value>
+  </property>
+  
+  <property>
     <name>apex.app-param.outputFileName</name>
     <description>Specify output directory path on HDFS. E.g: output-file-name.txt</description>
   </property>
@@ -75,38 +104,15 @@
     <name>dt.operator.fileOutput.prop.outputFileName</name>
     <value>${apex.app-param.outputFileName}</value>
   </property>
-
   <property>
-    <name>apex.app-param.schema.inputSchema</name>
-    <description>Specify tuple class name for json parser output.</description>
+    <name>apex.plugin.stram.plugins</name>
+    <value>com.datatorrent.metrics.plugin.MetricWriterPlugin</value>
   </property>
   <property>
-    <name>dt.operator.parser.port.out.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.schema.inputSchema}</value>
-  </property>
-
-  <property>
-    <name>dt.operator.filter.port.input.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.schema.inputSchema}</value>
-  </property>
-  
-  <property>
-    <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.schema.inputSchema}</value>
+    <name>apex.plugin.dag.setup</name>
+    <value>com.datatorrent.schema.SchemaDAGPlugin</value>
   </property>
 
-  <property>
-    <name>apex.app-param.schema.transformedSchema</name>
-    <description>Specify tuple class name for transform output.</description>
-  </property>
-  <property>
-    <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.schema.transformedSchema}</value>
-  </property>
-
-  <property>
-    <name>dt.operator.formatter.port.in.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.schema.transformedSchema}</value>
-  </property>
 </configuration>
+
 

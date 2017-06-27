@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<configuration>
+
+  <property>
+    <name>apex.app-param.TableName</name>
+    <description>Specify the table name on cassandra store.</description>
+  </property>
+  <property>
+    <name>dt.operator.cassandraOutput.prop.tablename</name>
+    <value>${apex.app-param.TableName}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.CassandraNodeName</name>
+    <description>Specify the Cassandra node name to form a cluster.</description>
+  </property>
+  <property>
+    <name>dt.operator.cassandraOutput.prop.store.node</name>
+    <value>${apex.app-param.CassandraNodeName}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.KeySpaceOnCassandra</name>
+    <description>Specify the key space on cassandra node.</description>
+  </property>
+  <property>
+    <name>dt.operator.cassandraOutput.prop.store.keyspace</name>
+    <value>${apex.app-param.KeySpaceOnCassandra}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.kafkaBrokerList</name>
+    <description>Specify Kafka Broker(s) list. E.g: broker1.com:9092, broker2.com:9093, broker3.com:9094</description>
+  </property>
+  <property>
+    <name>dt.operator.kafkaInput.prop.clusters</name>
+    <value>${apex.app-param.kafkaBrokerList}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.kafkaTopicName</name>
+    <description>Specify topic name of Kafka. E.g: transactions</description>
+  </property>
+  <property>
+    <name>dt.operator.kafkaInput.prop.topics</name>
+    <value>${apex.app-param.kafkaTopicName}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.initialOffsetOfTopicForKafkaConsumer</name>
+    <value>LATEST</value>
+    <description>Specify initial offset from the position where Kafka consumer starts reading messages. E.g: LATEST</description>
+  </property>
+  <property>
+    <name>dt.operator.kafkaInput.prop.initialOffset</name>
+    <value>${apex.app-param.initialOffsetOfTopicForKafkaConsumer}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.FilterConditionForTuples</name>
+    <description>Specify the filter condition for tuples. E.g: ({$}.getAmount() >= 20000)</description>
+  </property>
+  <property>
+    <name>dt.operator.filter.prop.condition</name>
+    <value>${apex.app-param.FilterConditionForTuples}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.jsonParserFieldInfo</name>
+    <description>Specify fields and their data types in Json Format. Possible values for data types are BOOLEAN,DOUBLE,INTEGER,FLOAT,LONG,SHORT,CHARACTER,STRING,DATE E.g {"adId":"INTEGER","adName":"STRING","bidPrice":"DOUBLE"}</description>
+  </property>
+  <property>
+    <name>dt.operator.jsonParser.prop.fieldInfo</name>
+    <value>${apex.app-param.jsonParserFieldInfo}</value>
+  </property>
+  
+   <property>
+    <name>apex.app-param.transformOutputFieldInfo</name>
+    <description>Specify json string with output field name and its data type. Possible values for data types are BOOLEAN,DOUBLE,INTEGER,FLOAT,LONG,SHORT,CHARACTER,STRING,DATE E.g. {"uniqueAdId":"INTEGER","cost":"DOUBLE"}</description>
+  </property> 
+  <property>
+    <name>dt.operator.transform.prop.outputFieldInfo</name>
+    <value>${apex.app-param.transformOutputFieldInfo}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.transformExpressionInfo</name>
+    <description>Specify json string with output field name and expression. E.g. {"uniqueAdId":"{$.adId}","cost":"{$.bidPrice} * 2.0"} </description>
+  </property> 
+  <property>
+    <name>dt.operator.transform.prop.expressionInfo</name>
+    <value>${apex.app-param.transformExpressionInfo}</value>
+  </property>
+ 
+</configuration>
+

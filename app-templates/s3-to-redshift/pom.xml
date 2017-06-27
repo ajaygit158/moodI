@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.datatorrent.apps</groupId>
+    <artifactId>moodi-app-templates</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
   
   <groupId>com.datatorrent.apps</groupId>
-  <version>0.9.0</version>
+  <version>0.10.0</version>
   <artifactId>s3-to-redshift</artifactId>
   <packaging>jar</packaging>
 
@@ -13,9 +19,8 @@
 
   <properties>
     <!-- change this if you desire to use a different version of Apex Core -->
-    <apex.version>3.5.0</apex.version>
+    <apex.version>3.7.0-SNAPSHOT</apex.version>
     <malhar.version>3.8.0-SNAPSHOT</malhar.version>
-    <megh.version>3.6.0-SNAPSHOT</megh.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
     <apex.apppackage.tags>app-template, redshift, s3</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
@@ -237,22 +242,6 @@
   </build>
 
   <dependencies>
-    <!-- add your dependencies here -->
-    <dependency>
-      <groupId>com.datatorrent</groupId>
-      <artifactId>dt-library</artifactId>
-      <version>${megh.version}</version>
-      <!-- 
-           If you know that your application does not need transitive dependencies pulled in by dt-library,
-           uncomment the following to reduce the size of your app package.
-      -->
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
     <dependency>
       <groupId>org.apache.apex</groupId>
       <artifactId>malhar-library</artifactId>
@@ -322,6 +311,16 @@
       <artifactId>apex-engine</artifactId>
       <version>${apex.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.datatorrent</groupId>
+      <artifactId>moodi-operator-library</artifactId>
+      <version>0.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.datatorrent</groupId>
+      <artifactId>metrics-plugin</artifactId>
+      <version>3.9.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
 

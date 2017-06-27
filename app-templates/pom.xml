@@ -5,7 +5,7 @@
     <groupId>com.datatorrent</groupId>
     <version>0.1.0-SNAPSHOT</version>
   </parent>
-  <groupId>com.datatorrent</groupId>
+  <groupId>com.datatorrent.apps</groupId>
   <artifactId>moodi-app-templates</artifactId>
   <packaging>pom</packaging>
   <name>moodi-app-templates</name>
@@ -143,9 +143,25 @@
 
   <dependencies>
    <!-- Add dependencies here -->
+    <dependency>
+      <groupId>com.datatorrent</groupId>
+   	  <artifactId>moodi-operator-library</artifactId>
+   	  <version>0.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.datatorrent</groupId>
+      <artifactId>metrics-lib-writer</artifactId>
+      <version>3.9.0-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 	
   <modules>
     <!-- Add individual app templates as modules here -->
+    <module>hdfs-to-hdfs-filter-transform</module>
+    <module>kafka-to-hdfs-filter-transform</module>
+    <module>kafka-to-kafka-filter-transform</module>
+    <module>kafka-to-cassandra-filter-transform</module>
+    <module>kinesis-to-s3</module>
+    <!--module>s3-to-redshift</module!-->
   </modules>
 </project>
