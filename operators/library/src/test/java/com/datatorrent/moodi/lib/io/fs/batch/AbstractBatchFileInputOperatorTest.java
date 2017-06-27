@@ -22,7 +22,7 @@
 * OR IN CONNECTION WITH THE LICENSED MATERIALS.
  */
 
-package com.datatorrent.io.fs;
+package com.datatorrent.moodi.lib.io.fs.batch;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -58,6 +58,7 @@ import com.datatorrent.batch.BatchControlTuple;
 import com.datatorrent.io.fs.utils.Scanner.SingleScanDirectoryScanner;
 import com.datatorrent.lib.helper.OperatorContextTestHelper;
 import com.datatorrent.lib.util.TestUtils;
+import com.datatorrent.moodi.lib.io.fs.batch.BatchBasedLineByLineFileInputOperator;
 import com.datatorrent.testbench.CollectorTestSink;
 
 public class AbstractBatchFileInputOperatorTest

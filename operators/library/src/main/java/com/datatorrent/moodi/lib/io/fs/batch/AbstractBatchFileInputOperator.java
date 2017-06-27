@@ -22,7 +22,7 @@
 * OR IN CONNECTION WITH THE LICENSED MATERIALS.
  */
 
-package com.datatorrent.io.fs;
+package com.datatorrent.moodi.lib.io.fs.batch;
 
 import java.io.IOException;
 import java.util.Map;
