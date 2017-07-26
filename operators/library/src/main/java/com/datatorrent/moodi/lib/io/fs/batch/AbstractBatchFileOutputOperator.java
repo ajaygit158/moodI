@@ -25,6 +25,8 @@
 package com.datatorrent.moodi.lib.io.fs.batch;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -81,12 +83,13 @@ public abstract class AbstractBatchFileOutputOperator<INPUT> extends AbstractFil
   {
     if (controlTuple instanceof BatchControlTuple.EndBatchControlTuple) {
       LOG.debug("Received end batch");
-      for (Map.Entry<String, String> entry : this.getFileNameToTmpName().entrySet()) {
+      List<String> fileNameList = new ArrayList<>(this.getFileNameToTmpName().keySet());
+      for (String fileName : fileNameList) {
         try {
-          LOG.debug("Finalizing file : {}", entry.getKey());
-          finalizeFile(entry.getKey());
+          LOG.debug("Finalizing file : {}", fileName);
+          finalizeFile(fileName);
         } catch (IOException e) {
-          LOG.debug("Failed to finalize file {}", entry.getKey());
+          LOG.debug("Failed to finalize file {}", fileName);
           throw new RuntimeException(e);
         }
       }
